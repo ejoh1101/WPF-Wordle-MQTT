@@ -62,7 +62,7 @@
                     Height="30"
                     VerticalAlignment="Center"
                     Click="ShowStatisticsDialog"
-                    Visibility="Visible"
+                    Visibility="Hidden"
                     DockPanel.Dock="Right"
                     Style="{StaticResource CommandButton}">
                     <Viewbox
