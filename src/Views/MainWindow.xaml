@@ -61,8 +61,8 @@
                     Width="30"
                     Height="30"
                     VerticalAlignment="Center"
-                    Click="ShowSettingsLayer"
-                    Visibility="Hidden"
+                    Click="ShowStatisticsDialog"
+                    Visibility="Visible"
                     DockPanel.Dock="Right"
                     Style="{StaticResource CommandButton}">
                     <Viewbox

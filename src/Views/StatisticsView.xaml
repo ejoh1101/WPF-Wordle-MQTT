@@ -17,82 +17,40 @@
             FontSize="16"
             FontWeight="Bold"
             Foreground="{DynamicResource TextForegroundKey}"
-            Text="STATISTICS" />
-        <UniformGrid HorizontalAlignment="Center" Rows="1">
-            <StackPanel
-                Margin="10"
-                HorizontalAlignment="Center"
-                Orientation="Vertical">
-                <TextBlock
-                    HorizontalAlignment="Center"
-                    FontSize="48"
-                    Text="{Binding Played}" />
-                <TextBlock
-                    HorizontalAlignment="Center"
-                    FontSize="12"
-                    Foreground="{DynamicResource TextForegroundKey}"
-                    Text="Played"
-                    TextAlignment="Center" />
-            </StackPanel>
-            <StackPanel
-                Margin="10"
-                HorizontalAlignment="Center"
-                Orientation="Vertical">
-                <TextBlock
-                    HorizontalAlignment="Center"
-                    FontSize="48"
-                    Text="{Binding Won}" />
-                <TextBlock
-                    HorizontalAlignment="Center"
-                    FontSize="12"
-                    Foreground="{DynamicResource TextForegroundKey}"
-                    Text="Win %"
-                    TextAlignment="Center" />
-            </StackPanel>
-            <StackPanel
-                Margin="10"
-                HorizontalAlignment="Center"
-                Orientation="Vertical">
-                <TextBlock
-                    HorizontalAlignment="Center"
-                    FontSize="48"
-                    Text="{Binding CurrentStreak}" />
-                <TextBlock
-                    HorizontalAlignment="Center"
-                    FontSize="12"
-                    Foreground="{DynamicResource TextForegroundKey}"
-                    TextAlignment="Center">
-                    Current<LineBreak />
-                    Streak</TextBlock>
-            </StackPanel>
-            <StackPanel
-                Margin="10"
-                HorizontalAlignment="Center"
-                Orientation="Vertical">
-                <TextBlock
-                    HorizontalAlignment="Center"
-                    FontSize="48"
-                    Text="{Binding MaxStreak}" />
-                <TextBlock
-                    HorizontalAlignment="Center"
-                    FontSize="12"
-                    Foreground="{DynamicResource TextForegroundKey}"
-                    TextAlignment="Center">
-                    Max<LineBreak />
-                    Streak</TextBlock>
-            </StackPanel>
-        </UniformGrid>
+            Text="STATUS REPORT" />
+        <Separator/>
         <TextBlock
-            Margin="10"
+            x:Name="status"
+            Margin="20"
             HorizontalAlignment="Center"
-            FontSize="16"
+            FontSize="28"
             FontWeight="Bold"
             Foreground="{DynamicResource TextForegroundKey}"
-            Text="GUESS DISTRIBUTION" />
+            Text="" />
+        <Separator/>
         <TextBlock
+            Margin="0,30,0,1"
             HorizontalAlignment="Center"
             FontSize="16"
             Foreground="{DynamicResource TextForegroundKey}"
-            Text="No Data" />
+            Text="Thank you for participating," />
+        <TextBlock
+            Margin="1"
+            HorizontalAlignment="Center"
+            FontSize="16"
+            Foreground="{DynamicResource TextForegroundKey}"
+            Text="your activity has been logged" />
+        <TextBlock
+            Margin="0,50,0,1"
+            HorizontalAlignment="Center"
+            FontSize="16"
+            Foreground="{DynamicResource TextForegroundKey}"
+            Text="close this status report to reset" />
+        <TextBlock
+            Margin="1"
+            HorizontalAlignment="Center"
+            FontSize="16"
+            Foreground="{DynamicResource TextForegroundKey}"
+            Text="" />
     </StackPanel>
 </UserControl>

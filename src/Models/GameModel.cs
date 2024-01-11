@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using WPFordle.Views;
 
 public class GameModel : ObservableModel
 {
@@ -99,7 +100,7 @@ public class GameModel : ObservableModel
             {
                 Success = success,
                 Validated = true,
-                Message = success ? "Genius" : null,
+                Message = success ? "Genius - points received!" : null,
                 GuessedWord = currentGuess
             };
 
@@ -171,15 +172,19 @@ public class GameModel : ObservableModel
     {
         this._gameOver = true;
 
+        // Set failure text. Gets overwritten on win. 
+        string mqttMessage = "wordle - failed";
+        string statusText = "FAILURE";
+        
         if (winStatus)
         {
-            //TODO: Send MQTT
-            await mqttManager.PublishTestDev("wordle completed");
+            mqttMessage = "wordle - success";
+            statusText = "SUCCESS";
         }
-        else
-        {
-            await mqttManager.PublishTestDev("wordle failed");
-        }
+
+        await mqttManager.PublishTestDev(mqttMessage);
+        Views.StatisticsView.Current.SetStatusText(statusText);
+        WPFordle.Views.MainWindow.Current.StatisticsDialog.Show();
     }
 
     public void ResetGame()

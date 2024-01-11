@@ -19,8 +19,17 @@ using System.Windows.Shapes;
 /// </summary>
 public partial class StatisticsView : UserControl
 {
+
+    public static StatisticsView Current;
+
     public StatisticsView()
     {
         InitializeComponent();
+        Current = this;
+    }
+
+    public void SetStatusText(string text)
+    {
+        _ = Dispatcher.Invoke(System.Windows.Threading.DispatcherPriority.Normal, () => this.status.Text = text);
     }
 }

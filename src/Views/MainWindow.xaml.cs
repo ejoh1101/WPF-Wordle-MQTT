@@ -8,11 +8,15 @@ using System.Windows;
 /// </summary>
 public partial class MainWindow : Window
 {
+
+    public static MainWindow Current;
+    
     #region Constructors
 
     public MainWindow()
     {
         this.InitializeComponent();
+        Current = this;
     }
 
     #endregion
@@ -51,10 +55,11 @@ public partial class MainWindow : Window
 
     private void CloseStatisticsDialog(object sender, RoutedEventArgs e)
     {
-        this.StatisticsDialog.Hide();
+        //this.StatisticsDialog.Hide();
+        App.ActiveSession.ResetGame();
     }
 
-    private void ShowStatisticsDialog(object sender, RoutedEventArgs e)
+    public void ShowStatisticsDialog(object sender, RoutedEventArgs e)
     {
         this.StatisticsDialog.Show();
     }
