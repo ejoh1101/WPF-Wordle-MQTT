@@ -153,7 +153,7 @@
             FontSize="14"
             FontWeight="Bold"
             Foreground="{DynamicResource TextForegroundKey}"
-            Text="A new WORDLE will be available each day!"
+            Text="You will earn points for the crew if successful!"
             TextWrapping="Wrap" />
     </StackPanel>
 </UserControl>

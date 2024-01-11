@@ -59,6 +59,16 @@ public partial class MainWindow : Window
         this.StatisticsDialog.Show();
     }
 
+    private void ResetGame(object sender, RoutedEventArgs e)
+    {
+        App.ActiveSession.ResetGame();
+    }
+
+    private void Exit(object sender, RoutedEventArgs e)
+    {
+        App.Current.Shutdown();
+    }
+
     protected override void OnContentRendered(EventArgs e)
     {
         this.ShowHelpDialog();

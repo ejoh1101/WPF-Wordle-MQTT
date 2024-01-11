@@ -7,8 +7,11 @@ using Microsoft.Extensions.Hosting;
 using Services;
 using Services.Impl;
 using System;
+using System.Threading.Tasks;
 using System.Windows;
 using Views;
+using WPFordle.Models;
+using WPFordle.ViewModels;
 
 /// <summary>
 /// Interaction logic for App.xaml
@@ -18,6 +21,7 @@ public partial class App : Application
     #region Fields
 
     private readonly IHost _host;
+    static public App ActiveSession;
 
     #endregion
 
@@ -38,6 +42,8 @@ public partial class App : Application
             .AddViewModels()
             .AddViews()
             .Build();
+
+        ActiveSession = this;
     }
 
     #endregion
@@ -111,6 +117,15 @@ public partial class App : Application
                 Source = newThemeSource
             });
     }
+
+    public async void ResetGame()
+    {
+        string filepath = @"C:\Users\EarliAdmin\source\repos\WPF-Wordle-MQTT\src\bin\Debug\net6.0-windows\WPFordle.exe";
+        System.Diagnostics.Process.Start(filepath);
+        await Task.Delay(600);
+        Application.Current.Shutdown();
+    }
+
 
     #endregion
 }

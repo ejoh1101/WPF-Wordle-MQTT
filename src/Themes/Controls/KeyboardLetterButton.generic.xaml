@@ -5,7 +5,7 @@
     xmlns:enums="clr-namespace:WPFordle.Models.Enums">
     <Style TargetType="{x:Type controls:KeyboardLetterButton}">
         <Setter Property="Cursor" Value="Hand" />
-        <Setter Property="FontSize" Value="14" />
+        <Setter Property="FontSize" Value="28" />
         <Setter Property="FontWeight" Value="Bold" />
         <Setter Property="HorizontalContentAlignment" Value="Center" />
         <Setter Property="VerticalContentAlignment" Value="Center" />

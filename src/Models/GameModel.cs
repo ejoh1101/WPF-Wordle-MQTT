@@ -17,6 +17,7 @@ public class GameModel : ObservableModel
     private int _currentLetterIndex;
     private bool _gameOver;
     private bool _isCommittingGuess;
+    public MqttManager mqttManager;
 
     #endregion
 
@@ -33,6 +34,8 @@ public class GameModel : ObservableModel
         this.Guesses = Enumerable.Range(0, Constants.MaximumGuesses)
             .Select(_ => new WordModel(this.TargetWord.Letters.Count))
             .ToList();
+        this.mqttManager = new();
+        mqttManager.ConnectClient();
     }
 
     #endregion
@@ -102,7 +105,7 @@ public class GameModel : ObservableModel
 
             if (guessResult.Success || this._currentGuessIndex == Constants.MaximumGuesses)
             {
-                this._gameOver = true;
+                await GameOver(guessResult.Success);
             }
 
             return guessResult;
@@ -161,6 +164,27 @@ public class GameModel : ObservableModel
         this._currentLetterIndex++;
 
         return true;
+    }
+
+
+    public async Task GameOver(bool winStatus)
+    {
+        this._gameOver = true;
+
+        if (winStatus)
+        {
+            //TODO: Send MQTT
+            await mqttManager.PublishTestDev("wordle completed");
+        }
+        else
+        {
+            await mqttManager.PublishTestDev("wordle failed");
+        }
+    }
+
+    public void ResetGame()
+    {
+
     }
 
     #endregion

@@ -31,9 +31,7 @@ public class WordProviderImpl : IWordProvider
             throw new WordsNotLoadedException();
         }
 
-        DateOnly today = DateOnly.FromDateTime(DateTime.Now);
-        int hash = today.GetHashCode();
-        Random random = new(hash);
+        Random random = new();
         int index = random.Next(0, this._answersList.Count);
 
         return this._answersList.ElementAt(index);

@@ -18,6 +18,7 @@
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.0.0-preview1" />
 		<PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="7.0.0-preview.1.22076.8" />
 		<PackageReference Include="Microsoft.Extensions.Hosting" Version="7.0.0-preview.1.22076.8" />
+		<PackageReference Include="MQTTnet" Version="4.3.3.952" />
 	</ItemGroup>
 
 </Project>
