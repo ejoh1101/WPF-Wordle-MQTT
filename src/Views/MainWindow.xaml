@@ -32,11 +32,11 @@
             </Grid.RowDefinitions>
             <Grid Grid.Row="0" Margin="5,5,5,7">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="32" />
-                    <ColumnDefinition Width="32" />
+                    <ColumnDefinition Width="44" />
+                    <ColumnDefinition Width="44" />
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="32" />
-                    <ColumnDefinition Width="32" />
+                    <ColumnDefinition Width="44" />
+                    <ColumnDefinition Width="44" />
                 </Grid.ColumnDefinitions>
                 <Button
                     Grid.Column="0"
