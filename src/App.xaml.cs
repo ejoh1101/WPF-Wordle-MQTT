@@ -21,7 +21,7 @@ public partial class App : Application
     #region Fields
 
     private readonly IHost _host;
-    static public App ActiveSession;
+    static public App? ActiveSession;
 
     #endregion
 
@@ -125,7 +125,6 @@ public partial class App : Application
         await Task.Delay(600);
         Application.Current.Shutdown();
     }
-
 
     #endregion
 }

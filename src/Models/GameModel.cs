@@ -173,16 +173,15 @@ public class GameModel : ObservableModel
         this._gameOver = true;
 
         // Set failure text. Gets overwritten on win. 
-        string mqttMessage = "wordle - failed";
         string statusText = "FAILURE";
         
         if (winStatus)
         {
-            mqttMessage = "wordle - success";
+            string mqttMessage = "wordle - success";
             statusText = "SUCCESS";
+            await mqttManager.PublishTestEli(mqttMessage);
         }
 
-        await mqttManager.PublishTestDev(mqttMessage);
         Views.StatisticsView.Current.SetStatusText(statusText);
         WPFordle.Views.MainWindow.Current.StatisticsDialog.Show();
     }

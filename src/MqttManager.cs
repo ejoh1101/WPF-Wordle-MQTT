@@ -11,11 +11,16 @@ using MQTTnet.Client;
 public class MqttManager
 {
 
-    public string mqttServerAddress = "s8f1e891.ala.us-east-1.emqxsl.com";
+    //public string mqttServerAddress = "s8f1e891.ala.us-east-1.emqxsl.com";
+    //public int? mqttServerPort = 8883;
+    //public string mqttClientID = "wordle-client"; // Guid.NewGuid().ToString();
+    //public string mqttUsername = "device1";
+    //public string mqttPassword = "getmqtt";
+    public string mqttServerAddress = "z0f9e7a2.ala.us-east-1.emqxsl.com";
     public int? mqttServerPort = 8883;
     public string mqttClientID = "wordle-client"; // Guid.NewGuid().ToString();
-    public string mqttUsername = "device1";
-    public string mqttPassword = "getmqtt";
+    public string mqttUsername = "Eli_amongus";
+    public string mqttPassword = "$lowRaccoon29";
     public IMqttClient? mqttClient;
     private readonly MqttFactory mqttFactory = new();
 
@@ -65,10 +70,9 @@ public class MqttManager
     }
 
 
-    public async Task PublishTestDev(string message)
+    public async Task PublishTestEli(string message)
     {
-
-        await Publish("test/dev", message);
+        await Publish("test/eli", message);
     }
 
     private async Task Publish(string channel, string message)
